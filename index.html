@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Alkitab - GPI Sidang Grandvista</title>
+    <!-- Memanggil Font dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Awan Bergerak -->
+    <div class="clouds">
+        <div class="cloud c1"></div>
+        <div class="cloud c2"></div>
+        <div class="cloud c3"></div>
+    </div>
+
+    <div class="container">
+        <!-- ================= SCREEN 1: START ================= -->
+        <div id="start-screen" class="screen active">
+            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=800&auto=format&fit=crop" alt="Alkitab" class="hero-img">
+            
+            <div class="church-header">
+                <span class="church-name">GPI Sidang Grandvista</span>
+            </div>
+            
+            <h1>Kuis Alkitab</h1>
+            <h2 class="sub-title">Yunus Pasal 1</h2>
+            
+            <p class="desc">Shalom adik-adik! Ayo isi nama dan kelasmu dulu ya sebelum mulai kuis!</p>
+            
+            <div class="input-group">
+                <input type="text" id="input-nama" placeholder="Nama Lengkap" required>
+                <input type="text" id="input-kelas" placeholder="Kelas (Cth: Kelas 3 SD)" required>
+            </div>
+            
+            <button id="btn-start" class="btn btn-primary">Mulai Kuis 🚀</button>
+        </div>
+
+        <!-- ================= SCREEN 2: QUIZ ================= -->
+        <div id="quiz-screen" class="screen">
+            <div class="header-quiz">
+                <span id="siswa-info" class="badge badge-blue">Nama: - | Kelas: -</span>
+                <span id="progress-text" class="badge badge-orange">Soal 1/30</span>
+            </div>
+            
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+
+            <h3 id="question-text" class="question">Pertanyaan...</h3>
+            <div id="options-container" class="options"></div>
+            
+            <button id="btn-next" class="btn btn-success" style="display: none;">Lanjut ➡️</button>
+        </div>
+
+        <!-- ================= SCREEN 3: RESULT ================= -->
+        <div id="result-screen" class="screen">
+            <img id="result-img" src="https://images.unsplash.com/photo-1601714582721-807dcead218f?q=80&w=800&auto=format&fit=crop" alt="Yunus" class="hero-img result-img">
+            
+            <h2 class="animate-pop">Kuis Selesai! 🎉</h2>
+            <span class="church-name-small">GPI Sidang Grandvista</span>
+            
+            <div class="result-card">
+                <h3 id="res-nama">Nama</h3>
+                <p id="res-kelas">Kelas</p>
+                <hr>
+                <div class="score-grid">
+                    <div>
+                        <p class="label">Benar</p>
+                        <h3 id="res-benar" class="text-green">0</h3>
+                    </div>
+                    <div>
+                        <p class="label">Salah</p>
+                        <h3 id="res-salah" class="text-red">0</h3>
+                    </div>
+                    <div>
+                        <p class="label">Nilai</p>
+                        <h3 id="res-nilai" class="highlight">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <p id="res-pesan" class="pesan"></p>
+            <button id="btn-restart" class="btn btn-primary">Main Lagi 🔄</button>
+        </div>
+    </div>
+
+    <!-- Library untuk efek Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
